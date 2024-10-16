@@ -22,6 +22,12 @@ public class Main {
         st.setCity("NewYork");
         System.out.println(st);
 
+        Student st1 = new Student();
+        st1.setId(10);
+        st1.setName("Ronnie Coleman");
+        st1.setCity("California");
+        System.out.println(st);
+
         //creating object for a student address
         Address ad = new Address();
         ad.setStreet("Street1");
@@ -41,6 +47,7 @@ public class Main {
 
         Transaction tx = s.beginTransaction();
         s.save(st);
+        s.save(st1);
         s.save(ad);
 
         tx.commit();

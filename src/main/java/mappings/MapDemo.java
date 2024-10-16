@@ -58,13 +58,25 @@ public class MapDemo {
 //        Question fetchQ = (Question) s.get(Question.class,121);
 //        System.out.println(fetchQ.getQuestion());
 //        System.out.println(fetchQ.getAnswer().getAnswer());
+
+        //incase of lazy loading it will load data related to questions
+        // wont Load Answer data until get getAnswer is called
+        //where eager loading load answer data from database
+        //only when the getAnswer or getAnswer().size is called
+
         Question q = (Question)s.get(Question.class, 121);
 
-        System.out.println("q.getAnswers() is "+q.getAnswers());
-        for(Answer as : q.getAnswers()){
-            System.out.println(as.getAnswer());
-        }
+//        System.out.println("q.getAnswers() is "+q.getAnswers());
+//        for(Answer as : q.getAnswers()){
+//            System.out.println(as.getAnswer());
+//        }
 
+
+        System.out.println(q.getQuestionId());
+        System.out.println(q.getQuestion());
+
+//
+//        System.out.println(q.getAnswers().size());
 
         s.close();
         factory.close();

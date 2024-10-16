@@ -15,8 +15,8 @@ public class Question {
 //    @JoinColumn(name="a_Id")
 //    private Answer answer;
 
-
-    @OneToMany(mappedBy = "question")
+    //on doing fetch=FetchType.Eager it loads the Answers when accessing q object
+    @OneToMany(mappedBy = "question", fetch = FetchType.EAGER)
     private List<Answer> answers;
 
 
@@ -36,7 +36,7 @@ public class Question {
         this.question = question;
     }
 
-    public List<Answer> getAnswers() {
+    public List<Answer>getAnswers() {
         return answers;
     }
 
