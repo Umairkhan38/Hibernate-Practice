@@ -16,7 +16,8 @@
         <mapping class="org.example.Address"/>
         <mapping class="mappings.Question"/>
         <mapping class="mappings.Answer"/>
-
+        <mapping class="ManyToMany.Emp"/>
+        <mapping class="ManyToMany.Project"/>
 
     </session-factory>
 

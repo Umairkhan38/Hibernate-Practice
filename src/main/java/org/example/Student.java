@@ -13,8 +13,8 @@ import javax.persistence.Table;
 public class Student {
     //Assigning as id using annotation
     @Id
-    private int id;
     @GeneratedValue
+    private int id;
 
     private String name;
     private String city;
@@ -30,6 +30,7 @@ public class Student {
     public void setCerti(Certificate certificate) {
         this.certi = certificate;
     }
+
 
     Student(int id, String name, String city){
         super();

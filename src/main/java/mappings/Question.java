@@ -1,5 +1,6 @@
 package mappings;
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Question {
@@ -9,9 +10,15 @@ public class Question {
     private int questionId;
     private String question;
 
-    @OneToOne
-    @JoinColumn(name="a_Id")
-    private Answer answer;
+//   For One To One Mapping
+//    @OneToOne
+//    @JoinColumn(name="a_Id")
+//    private Answer answer;
+
+
+    @OneToMany(mappedBy = "question")
+    private List<Answer> answers;
+
 
     public int getQuestionId() {
         return questionId;
@@ -29,12 +36,12 @@ public class Question {
         this.question = question;
     }
 
-    public Answer getAnswer() {
-        return answer;
+    public List<Answer> getAnswers() {
+        return answers;
     }
 
-    public void setAnswer(Answer answer) {
-        this.answer = answer;
+    public void setAnswers(List<Answer> answers) {
+        this.answers = answers;
     }
 
     public Question() {
@@ -42,10 +49,10 @@ public class Question {
     }
 
 
-    public Question(int questionId, String question, Answer answer) {
-        super();
+    public Question(int questionId, String question, List<Answer> answers) {
         this.questionId = questionId;
         this.question = question;
-        this.answer = answer;
+        this.answers = answers;
     }
+
 }

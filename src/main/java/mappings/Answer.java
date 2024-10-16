@@ -1,8 +1,5 @@
 package mappings;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 
 @Entity
@@ -13,8 +10,9 @@ public class Answer {
     private int answerId;
     private String answer;
 
-    @OneToOne(mappedBy="answer")
+    @ManyToOne
     private Question question;
+
 
     public Question getQuestion() {
         return question;

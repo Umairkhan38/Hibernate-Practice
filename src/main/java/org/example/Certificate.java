@@ -2,6 +2,7 @@ package org.example;
 
 import javax.persistence.Embeddable;
 
+
 @Embeddable
 public class Certificate {
 
